@@ -37,6 +37,26 @@ $(document).ready(function() {
       } else {
         $("#course").empty().append("Java");
       }
+      }
+      if (details === "very") {
+        $("#course").empty().append("CSS");
+      } else if (details === "important") {
+        $("#course").empty().append("C#");
+      } else if (details === "some") {
+        $("#course").empty().append("PHP");
+      } else {
+        $("#course").empty().append("Java");
+      }
+      }
+      if (style === "need") {
+        $("#course").empty().append("CSS");
+      } else if (style === "ok") {
+        $("#course").empty().append("PHP");
+      } else if (style === "umm") {
+        $("#course").empty().append("Java");
+      } else {
+        $("#course").empty().append("C#");
+      }
 
 
     $("#statement").show();
