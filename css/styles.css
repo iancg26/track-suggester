@@ -1,3 +1,6 @@
 #statement {
   display: none;
 }
+.btn {
+  display: inline;
+}

@@ -10,7 +10,6 @@ $(document).ready(function() {
     var style = $("select#style").val();
 
       if (system = "windows" ) {
-
         $("#course").empty().append("C#");
       } else if (system === "macos") {
         $("#course").empty().append("CSS");
@@ -55,10 +54,7 @@ $(document).ready(function() {
       } else {
         $("#course").empty().append("C#");
       }
-
-
     $("#statement").show();
-
     event.preventDefault();
   });
 });
