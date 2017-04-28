@@ -37,7 +37,6 @@ $(document).ready(function() {
       } else {
         $("#course").empty().append("Java");
       }
-      }
       if (details === "very") {
         $("#course").empty().append("CSS");
       } else if (details === "important") {
@@ -46,7 +45,6 @@ $(document).ready(function() {
         $("#course").empty().append("PHP");
       } else {
         $("#course").empty().append("Java");
-      }
       }
       if (style === "need") {
         $("#course").empty().append("CSS");
