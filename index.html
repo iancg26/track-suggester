@@ -10,6 +10,30 @@
   <body>
     <div class="container">
       <h1>Track Suggester</h1>
+      <p>This is the track you should take.</p>
+      <form id="track suggester">
+        <label for="name">Name</label>
+        <input id="name" type="text">
+        <label for="system">What is your favorite operating system?</label>
+        <select id="system">
+          <option value="windows">Windows</option>
+          <option value="macos">macOS</option>
+          <option value="linux">Linux</option>
+        </select>
+        <label for="app">What is your favorite app?</label>
+        <select id="app">
+          <option value="tinder">Tinder</option>
+          <option value="facebook">Facebook</option>
+          <option value="snapchat">Snapchat</option>
+          <option value="pokemongo">PokemonGo</option>
+        </select>
+
+        <button type="submit" class="btn">What track should I take?</button>
+      </form>
+
+      <div id="statement">
+        <p><span id="name"></span> should take <span id="course"></span>.</p>
+      </div>
 
     </div>
 
