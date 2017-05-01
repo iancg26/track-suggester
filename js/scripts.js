@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
   $("form#tracksuggester").submit(function(event) {
-
     var name = $("select#name").val();
     var system = $("select#system").val();
     var app = $("select#app").val();

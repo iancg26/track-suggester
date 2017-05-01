@@ -2,5 +2,25 @@
   display: none;
 }
 .btn {
-  display: inline;
+  display: block;
+}
+body {
+  background-image: url("../img/background.png");
+  background-color: black;
+}
+h1 {
+  color: green;
+  font-family: 'VT323', monospace;
+  font-size: 50px;
+}
+p {
+  color: green;
+}
+label {
+  color: green; font-style: bolder;
+}
+.container {
+  background-color: black;
+  padding: 100px 0;
+  margin-top: 30px;
 }
