@@ -21,6 +21,6 @@ label {
 }
 .container {
   background-color: black;
-  padding: 100px 0;
+  padding: 100px 15px;
   margin-top: 30px;
 }

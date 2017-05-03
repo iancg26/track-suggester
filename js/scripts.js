@@ -52,7 +52,6 @@ $(document).ready(function() {
       } else {
         $("#course").empty().append("C#");
       }
-    $("name").show();
     $("#statement").show();
     event.preventDefault();
   });
