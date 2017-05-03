@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("form#tracksuggester").submit(function(event) {
-    var name = $("select#name").val();
+    var name = $("#name").val();
     var system = $("select#system").val();
     var app = $("select#app").val();
     var role = $("select#role").val();
@@ -52,6 +52,7 @@ $(document).ready(function() {
       } else {
         $("#course").empty().append("C#");
       }
+    $("name").show();
     $("#statement").show();
     event.preventDefault();
   });
