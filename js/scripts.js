@@ -1,3 +1,4 @@
+// UI logic
 $(document).ready(function() {
   $("form#tracksuggester").submit(function(event) {
     var name = $("#name").val();
@@ -6,53 +7,45 @@ $(document).ready(function() {
     var role = $("select#role").val();
     var details = $("select#details").val();
     var style = $("select#style").val();
+    var cSharp = 0;
+    var cssTally = 0;
+    var phpTally = 0;
+    var javaTally = 0;
 
-      if (system = "windows" ) {
-        $("#course").empty().append("C#");
-      } else if (system === "macos") {
-        $("#course").empty().append("CSS");
-      } else if (system === "linux") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
+// Business logic
+      function tallyScores(userSystem, userApp, userRole, userDetails, userStyle) {
+
+       if (userSystem === "windows" ) { cSharp++; } else if (userSystem === "macos") { cssTally++; } else if (userSystem === "linux") { phpTally++; } else { javaTally++; }
+
+       if (userApp === "tinder" ) { cSharp++; } else if (userApp === "facebook") { cssTally++; } else if (userApp === "snapchat") { phpTally++; } else { javaTally++; }
+
+       if (userRole === "leader" ) { cSharp++; } else if (userRole === "follower") { cssTally++; } else if (userRole === "wallflower") { phpTally++; } else { javaTally++; }
+
+       if (userDetails === "very" ) {
+         cSharp++;
+       } else if (userDetails === "important") {
+         cssTally++;
+       } else if (userDetails === "some") {
+         phpTally++;
+       } else {
+         javaTally++;
+       }
+
+       if (userStyle === "need" ) { cSharp++; } else if (userStyle === "ok") { cssTally++; } else if (userStyle === "umm") { phpTally++; } else { javaTally++; }
       }
-      if (app === "tinder") {
-          $("#course").empty().append("CSS");
-      } else if (app === "facebook") {
-        $("#course").empty().append("C#");
-      } else if (app === "snapchat") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
+      function getMaxOftalleyScores(cSharp, cssTally, phpTally, javaTally) {
+        return Math.max.apply(null, cSharp, cssTally, phpTally, javaTally);
+        console.log(cSharp);
       }
-      if (role === "wallflower") {
-        $("#course").empty().append("PHP");
-      } else if (role === "leader") {
-        $("#course").empty().append("C#");
-      } else if (role === "follower") {
-        $("#course").empty().append("CSS");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (details === "very") {
-        $("#course").empty().append("CSS");
-      } else if (details === "important") {
-        $("#course").empty().append("C#");
-      } else if (details === "some") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (style === "need") {
-        $("#course").empty().append("CSS");
-      } else if (style === "ok") {
-        $("#course").empty().append("PHP");
-      } else if (style === "umm") {
-        $("#course").empty().append("Java");
-      } else {
-        $("#course").empty().append("C#");
-      }
+      var resultMax = getMaxOftalleyScores();
+      console.log(resultMax);
     $("#statement").show();
     event.preventDefault();
+      // };
+      // };
+      // };
+      // };
+      // };
+
+  })
   });
-});
