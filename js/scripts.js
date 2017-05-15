@@ -7,43 +7,31 @@ $(document).ready(function() {
     var role = parseInt($("select#role").val());
     var details = parseInt($("select#details").val());
     var style = parseInt($("select#style").val());
-    var cSharp = 0;
-    var cssTally = 0;
-    var phpTally = 0;
-    var javaTally = 0;
     $("#statement").show();
     event.preventDefault();
+
     var total = (system + app + role + details + style);
-    console.log(total);
-// Business logic
-    function tallyScores(userSystem, userApp, userRole, userDetails, userStyle) {
-
-     if (userSystem === "windows" ) { cSharp++; } else if (userSystem === "macos") { cssTally++; } else if (userSystem === "linux") { phpTally++; } else { javaTally++; }
-
-     if (userApp === "tinder" ) { cSharp++; } else if (userApp === "facebook") { cssTally++; } else if (userApp === "snapchat") { phpTally++; } else { javaTally++; }
-
-     if (userRole === "leader" ) { cSharp++; } else if (userRole === "follower") { cssTally++; } else if (userRole === "wallflower") { phpTally++; } else { javaTally++; }
-
-     if (userDetails === "very" ) {
-       cSharp++;
-     } else if (userDetails === "important") {
-       cssTally++;
-     } else if (userDetails === "some") {
-       phpTally++;
-     } else {
-       javaTally++;
-     }
-
-     if (userStyle === "need" ) { cSharp++; } else if (userStyle === "ok") { cssTally++; } else if (userStyle === "umm") { phpTally++; } else { javaTally++; }
+    
+    if (total <= 5) {
+      $("#cSharp").show();
+      $("#java").hide();
+      $("#ruby").hide();
+      $("#css").hide();
+    } else if (total >= 6 && total <= 12) {
+      $("#java").show();
+      $("#cSharp").hide();
+      $("#css").hide();
+      $("#ruby").hide();
+    } else if (total >= 13 && total <= 18) {
+      $("#ruby").show();
+      $("#cSharp").hide();
+      $("#css").hide();
+      $("#java").hide();
+    } else if (total >= 19) {
+      $("#css").show();
+      $("#java").hide();
+      $("cSharp").hide();
+      $("#ruby").hide();
     }
-    function getMaxOfTalleyScores(cSharp, cssTally, phpTally, javaTally) {
-      return Math.max.apply(cSharp, cssTally, phpTally, javaTally);
-
-    }
-    var resultMax = getMaxOfTalleyScores();
-
-
-
-
-    })
+  });
     });
