@@ -1,58 +1,37 @@
+// UI logic
 $(document).ready(function() {
   $("form#tracksuggester").submit(function(event) {
     var name = $("#name").val();
-    var system = $("select#system").val();
-    var app = $("select#app").val();
-    var role = $("select#role").val();
-    var details = $("select#details").val();
-    var style = $("select#style").val();
-
-      if (system = "windows" ) {
-        $("#course").empty().append("C#");
-      } else if (system === "macos") {
-        $("#course").empty().append("CSS");
-      } else if (system === "linux") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (app === "tinder") {
-          $("#course").empty().append("CSS");
-      } else if (app === "facebook") {
-        $("#course").empty().append("C#");
-      } else if (app === "snapchat") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (role === "wallflower") {
-        $("#course").empty().append("PHP");
-      } else if (role === "leader") {
-        $("#course").empty().append("C#");
-      } else if (role === "follower") {
-        $("#course").empty().append("CSS");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (details === "very") {
-        $("#course").empty().append("CSS");
-      } else if (details === "important") {
-        $("#course").empty().append("C#");
-      } else if (details === "some") {
-        $("#course").empty().append("PHP");
-      } else {
-        $("#course").empty().append("Java");
-      }
-      if (style === "need") {
-        $("#course").empty().append("CSS");
-      } else if (style === "ok") {
-        $("#course").empty().append("PHP");
-      } else if (style === "umm") {
-        $("#course").empty().append("Java");
-      } else {
-        $("#course").empty().append("C#");
-      }
+    var system = parseInt($("select#system").val());
+    var app = parseInt($("select#app").val());
+    var role = parseInt($("select#role").val());
+    var details = parseInt($("select#details").val());
+    var style = parseInt($("select#style").val());
     $("#statement").show();
     event.preventDefault();
+
+    var total = (system + app + role + details + style);
+    
+    if (total <= 5) {
+      $("#cSharp").show();
+      $("#java").hide();
+      $("#ruby").hide();
+      $("#css").hide();
+    } else if (total >= 6 && total <= 12) {
+      $("#java").show();
+      $("#cSharp").hide();
+      $("#css").hide();
+      $("#ruby").hide();
+    } else if (total >= 13 && total <= 18) {
+      $("#ruby").show();
+      $("#cSharp").hide();
+      $("#css").hide();
+      $("#java").hide();
+    } else if (total >= 19) {
+      $("#css").show();
+      $("#java").hide();
+      $("cSharp").hide();
+      $("#ruby").hide();
+    }
   });
-});
+    });
