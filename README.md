@@ -6,11 +6,11 @@
 
 ## Description
 
-_This application incorperates javascript, and allows the user to input information and recieve output about which coding language fits the users personality._
+_This application incorporates javascript, and allows the user to input information and receive output about which coding language fits the users personality._
 
 ## Setup/Installation Requirements
 
-*Open up github.* 
+*Open up github.*
 *Clone a copy of the application.*
 *Open the file inside of either a text reader or Atom.*
 
